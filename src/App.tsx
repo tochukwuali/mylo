@@ -4,7 +4,6 @@ import type { Memory, Photo } from "./types";
 import SectionHeader from "./components/SectionHeader";
 import LoveMeter from "./components/LoveMeter";
 import AnimatedBackgroundHearts from "./components/AnimatedBackgroundHearts";
-import ConfettiHearts from "./components/ConfettiHearts";
 import SectionSkeleton from "./components/SectionSkeleton";
 
 const Timeline = React.lazy(() => import("./components/Timeline"));
@@ -79,17 +78,10 @@ const galleryPhotos: Photo[] = [
 
 const App: React.FC = () => {
   const [loveLevel, setLoveLevel] = useState<number>(5);
-  const [showConfetti, setShowConfetti] = useState<boolean>(false);
-
-  const handleHeartClick = () => {
-    setShowConfetti(true);
-    setTimeout(() => setShowConfetti(false), 1200);
-  };
 
   return (
     <div className="page">
       <AnimatedBackgroundHearts />
-      {showConfetti && <ConfettiHearts />}
 
       <header className="hero">
         <div className="brand-mark">mylo</div>
