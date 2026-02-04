@@ -52,35 +52,27 @@ const memories: Memory[] = [
 
 const galleryPhotos: Photo[] = [
   {
-    src: "https://images.pexels.com/photos/3693901/pexels-photo-3693901.jpeg?auto=compress&cs=tinysrgb&w=800",
-    caption: "You, my favorite view.",
-  },
-  {
-    src: "https://images.pexels.com/photos/835987/pexels-photo-835987.jpeg?auto=compress&cs=tinysrgb&w=800",
-    caption: "That laugh I’m obsessed with.",
-  },
-  {
-    src: "https://images.pexels.com/photos/3693899/pexels-photo-3693899.jpeg?auto=compress&cs=tinysrgb&w=800",
+    src: "/my3.jpg",
     caption: "Our little universe.",
   },
   {
-    src: "https://images.pexels.com/photos/3693900/pexels-photo-3693900.jpeg?auto=compress&cs=tinysrgb&w=800",
-    caption: "I’d pause time here.",
+    src: "/my1.jpg",
+    caption: "You, my favorite view.",
   },
   {
-    src: "https://images.pexels.com/photos/3693892/pexels-photo-3693892.jpeg?auto=compress&cs=tinysrgb&w=800",
-    caption: "Our walks that never feel long enough.",
-  },
-  {
-    src: "https://images.pexels.com/photos/8354468/pexels-photo-8354468.jpeg?auto=compress&cs=tinysrgb&w=800",
-    caption: "You, lost in your own little world.",
-  },
-  {
-    src: "https://images.pexels.com/photos/3693903/pexels-photo-3693903.jpeg?auto=compress&cs=tinysrgb&w=800",
+    src: "/my5.jpg",
     caption: "Every sunset is better with you.",
   },
   {
-    src: "https://images.pexels.com/photos/3693911/pexels-photo-3693911.jpeg?auto=compress&cs=tinysrgb&w=800",
+    src: "/my2.jpg",
+    caption: "That laugh I’m obsessed with.",
+  },
+  {
+    src: "/my4.jpg",
+    caption: "Our walks that never feel long enough.",
+  },
+  {
+    src: "/my6.jpg",
     caption: "The quiet moments I never post, but never forget.",
   },
 ];
@@ -112,28 +104,17 @@ const App: React.FC = () => {
             fancy poses. Just our story, our chaos, and all the reasons I’m
             still stupidly in love with you.
           </p>
-
-          <div className="hero-cta-row">
-            <a href="#story" className="btn-primary">
-              Read our story
-            </a>
-            <button
-              type="button"
-              className="btn-ghost"
-              onClick={handleHeartClick}
-            >
-              Tap for a surprise 💘
-            </button>
-          </div>
-
-          <LoveMeter
-            loveLevel={loveLevel}
-            setLoveLevel={setLoveLevel}
-          />
         </div>
       </header>
 
       <main>
+        <section id="meter" className="section section-meter">
+          <LoveMeter
+            loveLevel={loveLevel}
+            setLoveLevel={setLoveLevel}
+          />
+        </section>
+
         <section id="story" className="section section-story">
           <SectionHeader
             eyebrow="Our timeline"
